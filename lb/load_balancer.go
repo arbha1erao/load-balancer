@@ -1,6 +1,8 @@
 package lb
 
-import "sync"
+import (
+	"sync"
+)
 
 type Server struct {
 	URL         string
@@ -10,8 +12,7 @@ type Server struct {
 }
 
 type LoadBalancer struct {
-	Servers  []*Server
-	mutex    sync.Mutex
-	rrIndex  int
-	Strategy string
+	Servers []*Server
+	mutex   sync.Mutex
+	rrIndex int
 }
